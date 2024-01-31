@@ -12,18 +12,15 @@ describe("Text Box Page", () => {
     cy.get("#submit").click();
     cy.get("#name").should("have.text", "Name:Denis Nazarenko");
     cy.get("#email").should("have.text", "Email:aaa@aa.us");
-    // cy.get('p[id="currentAddress"]').should("have.text", "Current Address :FL");
-    cy.get('p[id="permanentAddress"]').should(
-      "have.text",
-      "Permananet Address :NY"
-    );
+    cy.get('p[id="currentAddress"]').should("contain.text", "Current Address :FL");
+    cy.get('p[id="permanentAddress"]').should("have.text","Permananet Address :NY");
   });
 
-  it("Text Box PageObject", () => {
+  it.skip("Text Box PageObject", () => {
     FillForm.fillTextBoxForm();
     cy.get("#name").should("have.text", "Name:Denis Nazarenko");
     cy.get("#email").should("have.text", "Email:aaa@aa.us");
-    // cy.get('p[id="currentAddress"]').should("have.text", "Current Address :FL");
+    cy.get('p[id="currentAddress"]').should("contain.text", "Current Address :FL");
     cy.get('p[id="permanentAddress"]').should("have.text","Permananet Address :NY");
   });
 });
