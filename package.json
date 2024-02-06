@@ -9,7 +9,7 @@
   "author": "Denis N",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.6.3",
+    "cypress": "^13.6.4",
     "typescript": "^5.3.3"
   }
 }
