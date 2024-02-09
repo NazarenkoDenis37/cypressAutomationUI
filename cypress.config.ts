@@ -13,7 +13,8 @@ export default defineConfig({
       demoQA: 'https://demoqa.com',
       hw: "https://play1.automationcamp.ir/expected_conditions.html",
       email: "293728den@gmail.com",
-      password: "293728den"
+      password: "293728den",
+      herokuapp: "https://the-internet.herokuapp.com"
     },
   },
   defaultCommandTimeout:16000
