@@ -11,7 +11,7 @@ class Alert{
     private resultTextJSAlertConfirmOK:string = "You clicked: Ok"
     private resultTextJSAlertConfirmCancel:string = "You clicked: Cancel"
     private jsConfirmText:string = "Click for JS Confirm"
-    private jsPromptText:string = "Click for JS Prompt"
+    //private jsPromptText:string = "Click for JS Prompt"
     
 
     jsAlert(){

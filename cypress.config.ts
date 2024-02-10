@@ -1,4 +1,5 @@
 import { defineConfig } from "cypress";
+require('dotenv').config()
 
 export default defineConfig({
   e2e: {
@@ -12,8 +13,6 @@ export default defineConfig({
       test: "Hello World!",
       demoQA: 'https://demoqa.com',
       hw: "https://play1.automationcamp.ir/expected_conditions.html",
-      email: "293728den@gmail.com",
-      password: "293728den",
       herokuapp: "https://the-internet.herokuapp.com"
     },
   },

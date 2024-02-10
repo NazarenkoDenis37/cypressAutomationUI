@@ -16,4 +16,11 @@ describe('ALERT', () => {
     it('Click for JS Prompt OK/true', () => {
         AlertPage.jsPrompt()
     });
+    it('Click for JS Prompt OK/true hardcore', () => {
+        cy.window().then(win=>{
+            cy.stub(win,'prompt').returns('Hello World!')
+            cy.contains('button', 'Click for JS Prompt').click()
+        })
+        cy.get('#result').should('have.text', 'You entered: Hello World!')
+    });
 });
