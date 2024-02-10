@@ -4,8 +4,8 @@ class LocalCodingLogin {
     loginButton: string = 'button[type="submit"]';  
 
     buttonLogin(email: string, password: string) :void {
-        cy.get(this.email).type(email);
-        cy.get(this.password).type(password, {log:false});
+        cy.get(this.email).type(process.env.EMAIL_LOCAL_STAGE);
+        cy.get(this.password).type(process.env.PASSWORD_LOCAL_STAGE, {log:false});
         cy.get(this.loginButton).click();
     }
 }
