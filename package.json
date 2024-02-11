@@ -10,6 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.6.4",
+    "cypress-iframe": "^1.0.1",
+    "prettier": "3.2.5",
     "typescript": "^5.3.3"
   },
   "dependencies": {
