@@ -11,13 +11,15 @@ export default defineConfig({
       // implement node event listeners here
     },
     env: {
-      stage: "https://stage.pasv.us/user/login",
+      stage: "https://stage.pasv.us",
       prod: "https://coding.pasv.us/course",
       test: "Hello World!",
       demoQA: "https://demoqa.com",
       hw: "https://play1.automationcamp.ir/expected_conditions.html",
       herokuapp: "https://the-internet.herokuapp.com",
       hw2: "https://play1.automationcamp.ir",
+      email: "293728den@gmail.com",
+      password: "293728den"
     },
   },
   retries: {
