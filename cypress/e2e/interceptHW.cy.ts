@@ -1,4 +1,4 @@
-describe("INTERCEPT HOMEWORK", () => {
+describe.skip("INTERCEPT HOMEWORK", () => {
   it("network request spy katas", function () {
     cy.fixture("katas.json").as("data");
     cy.intercept("POST", "*/login").as("login");
@@ -27,4 +27,32 @@ describe("INTERCEPT HOMEWORK", () => {
       cy.wrap(this.data).should('deep.equal', el.response.body)
     });
   });
+});
+describe('intercept 2', () => {
+    it("network request spy course", function() {
+        cy.fixture("course.json").as("dataCourse");
+        cy.intercept("POST", "*/login").as("login");
+        cy.intercept(
+          "https://server-stage.pasv.us/course",
+          { fixture: "course.json" }
+        ).as("course");
+        cy.visit(`${Cypress.env("stage")}/user/login`);
+        cy.get("#normal_login_email").type(Cypress.env("email"));
+        cy.get("#normal_login_password").type(Cypress.env("password"), {
+          log: false,
+        });
+        cy.get('button[type="submit"]').click();
+        cy.wait("@login").then((wholeResponse) => {
+          console.log(wholeResponse, "resp");
+          cy.location().should((loc) => {
+            console.log(loc, "loc");
+            expect(wholeResponse.response.statusCode).to.eq(200);
+          });
+        });
+        cy.visit("https://stage.pasv.us/course");
+        cy.wait("@course").then((el) => {
+          console.log(el, 'response');
+          cy.wrap(this.dataCourse).should('deep.equal', el.response.body)
+        });
+      })
 });
