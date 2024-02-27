@@ -1,6 +1,6 @@
 describe('EXCEL', () => {
     it('reading excel', () => {
-        cy.readingXlsx('cypress/fixtures/excelData.xlsx').then(data =>{
+        cy.readingXlsx('cypress/fixtures/excelData.xlsx').then((data) =>{
             cy.log(data)
             cy.log(data[0])
             cy.log(data[0].data)
